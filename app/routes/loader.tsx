@@ -1,4 +1,12 @@
+import type { MetaFunction } from "@remix-run/react";
 import { Link, useLoaderData } from "@remix-run/react";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Fetch with Loader" },
+    { name: "description", content: "Fetch with Loader" },
+  ];
+};
 
 type User = {
   id: number;
