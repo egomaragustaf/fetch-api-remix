@@ -12,7 +12,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <Layout>
-      <h1 className="text-slate-500 text-2xl">Welcome to RemixV2</h1>
+      <h1 className="text-slate-600 text-2xl">Welcome to RemixV2</h1>
       <p className="mb-4">
         This is web experiment to fetch API with several approaches
       </p>
