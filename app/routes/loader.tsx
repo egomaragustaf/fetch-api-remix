@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/react";
 import { Link, useLoaderData } from "@remix-run/react";
+import { Layout } from "~/components";
 
 export const meta: MetaFunction = () => {
   return [
@@ -45,7 +46,7 @@ export default function Route() {
   const { users } = useLoaderData<typeof loader>();
 
   return (
-    <div className="p-4 flex flex-col gap-2">
+    <Layout>
       <h1>Fetching data with Remix Loader</h1>
       <p>
         Source:{" "}
@@ -60,6 +61,6 @@ export default function Route() {
       ) : (
         <p>No User Found</p>
       )}
-    </div>
+    </Layout>
   );
 }
