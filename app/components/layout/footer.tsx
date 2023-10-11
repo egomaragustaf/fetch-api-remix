@@ -5,7 +5,9 @@ export function Footer() {
   return (
     <div>
       <Link to="https://github.com/egomaragustaf">
-        <Button variant="link">&copy; Ego Maragustaf</Button>
+        <Button variant="link" className="text-muted-foreground">
+          &copy; Ego Maragustaf
+        </Button>
       </Link>
     </div>
   );
