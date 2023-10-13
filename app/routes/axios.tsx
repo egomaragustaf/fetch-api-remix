@@ -32,7 +32,6 @@ export default function Route() {
       </p>
 
       {error && <p className="text-danger">{error}</p>}
-
       {users && <pre>{JSON.stringify(users, null, 2)}</pre>}
     </Layout>
   );

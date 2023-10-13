@@ -9,6 +9,16 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+type FetchList = {
+  to: string;
+  text: string;
+};
+
+const fetchListItems: FetchList[] = [
+  { to: "/loader", text: "Loader" },
+  { to: "/axios", text: "Axios" },
+];
+
 export default function Index() {
   return (
     <Layout>
@@ -16,9 +26,15 @@ export default function Index() {
       <p className="mb-4">
         This is web experiment to fetch API with several approaches
       </p>
-      <Link to="/loader" className="text-muted-foreground">
-        Loader
-      </Link>
+      <ul>
+        {fetchListItems.map((item) => {
+          return (
+            <li key={item.to}>
+              <Link to={item.to}>{item.text}</Link>
+            </li>
+          );
+        })}
+      </ul>
     </Layout>
   );
 }
