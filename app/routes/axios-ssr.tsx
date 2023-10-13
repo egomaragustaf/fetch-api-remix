@@ -2,6 +2,7 @@ import type { MetaFunction } from "@remix-run/react";
 import { useLoaderData } from "@remix-run/react";
 import axios from "axios";
 import { Layout } from "~/components";
+import type { User } from "~/types";
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,7 +15,7 @@ const base_url = `https://jsonplaceholder.typicode.com/users`;
 
 export async function loader() {
   const response = await axios.get(base_url);
-  const users = await response.data;
+  const users = (await response.data) as { users: User[] };
 
   return { users };
 }
