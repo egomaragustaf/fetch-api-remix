@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/react";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { Layout } from "~/components";
 import type { User } from "~/types";
 
@@ -27,11 +27,13 @@ export default function Route() {
       <h1>Fetching data with Remix Loader</h1>
       <p>
         Source:{" "}
-        <Link
-          to={"https://jsonplaceholder.typicode.com/users"}
-          className="text-muted-foreground">
+        <a
+          href="https://jsonplaceholder.typicode.com/users"
+          target="_blank"
+          className="text-muted-foreground"
+          rel="noreferrer">
           https://jsonplaceholder.typicode.com/users
-        </Link>
+        </a>
       </p>
       {users && <pre>{JSON.stringify(users, null, 2)}</pre>}
     </Layout>
