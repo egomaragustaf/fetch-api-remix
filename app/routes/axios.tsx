@@ -1,8 +1,18 @@
+import type { MetaFunction } from "@remix-run/node";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 import type { User } from "~/types";
 import { Layout } from "~/components";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Fetch with Axios" },
+    { name: "description", content: "Fetch with Axios" },
+  ];
+};
+
+const base_url = "https://jsonplaceholder.typicode.com/users";
 
 export default function Route() {
   const [users, setUsers] = useState<User[]>([]);
@@ -10,7 +20,7 @@ export default function Route() {
 
   useEffect(() => {
     axios
-      .get<User[]>("https://jsonplaceholder.typicode.com/users")
+      .get<User[]>(base_url)
       .then((res) => setUsers(res.data))
       .catch((err) => {
         setError(err.message);
@@ -23,11 +33,11 @@ export default function Route() {
       <p>
         Source:{" "}
         <a
-          href="https://jsonplaceholder.typicode.com/users"
+          href={base_url}
           target="_blank"
           className="text-muted-foreground"
           rel="noreferrer">
-          https://jsonplaceholder.typicode.com/users
+          {base_url}
         </a>
       </p>
 

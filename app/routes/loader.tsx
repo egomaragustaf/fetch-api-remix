@@ -28,11 +28,11 @@ export default function Route() {
       <p>
         Source:{" "}
         <a
-          href="https://jsonplaceholder.typicode.com/users"
+          href={base_url}
           target="_blank"
           className="text-muted-foreground"
           rel="noreferrer">
-          https://jsonplaceholder.typicode.com/users
+          {base_url}
         </a>
       </p>
       {users && <pre>{JSON.stringify(users, null, 2)}</pre>}
