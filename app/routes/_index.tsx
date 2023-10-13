@@ -22,19 +22,23 @@ const fetchListItems: FetchList[] = [
 export default function Index() {
   return (
     <Layout>
-      <h1 className="text-slate-600 text-2xl">Welcome to RemixV2</h1>
-      <p className="mb-4">
-        This is web experiment to fetch API with several approaches
-      </p>
-      <ul>
-        {fetchListItems.map((item) => {
-          return (
-            <li key={item.to}>
-              <Link to={item.to}>{item.text}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <main className="max-w-4xl">
+        <h1 className="text-slate-600 text-2xl">Welcome to RemixV2</h1>
+        <p className="mb-4">
+          This is web experiment to fetch API with several approaches
+        </p>
+        <ul className="text-muted-foreground w-fit">
+          {fetchListItems.map((item) => {
+            return (
+              <li
+                key={item.to}
+                className="hover:text-indigo-700 hover:underline">
+                <Link to={item.to}>{item.text}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </main>
     </Layout>
   );
 }
