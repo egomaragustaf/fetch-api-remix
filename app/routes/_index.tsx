@@ -15,8 +15,9 @@ type FetchList = {
 };
 
 const fetchListItems: FetchList[] = [
-  { to: "/loader", text: "Loader" },
-  { to: "/axios", text: "Axios" },
+  { to: "/loader", text: "Fetch Loader" },
+  { to: "/axios-csr", text: "Axios-CSR" },
+  { to: "/axios-ssr", text: "Axios-SSR" },
 ];
 
 export default function Index() {
