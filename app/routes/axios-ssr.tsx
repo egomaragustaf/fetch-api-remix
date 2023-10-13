@@ -1,20 +1,20 @@
 import type { MetaFunction } from "@remix-run/react";
 import { useLoaderData } from "@remix-run/react";
+import axios from "axios";
 import { Layout } from "~/components";
-import type { User } from "~/types";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Fetch with Loader" },
-    { name: "description", content: "Fetch with Loader" },
+    { title: "Fetch with Axios-SSR" },
+    { name: "description", content: "Fetch with Axios-SSR" },
   ];
 };
 
 const base_url = `https://jsonplaceholder.typicode.com/users`;
 
 export async function loader() {
-  const response = await fetch(base_url);
-  const users = (await response.json()) as { users: User[] };
+  const response = await axios.get(base_url);
+  const users = await response.data;
 
   return { users };
 }

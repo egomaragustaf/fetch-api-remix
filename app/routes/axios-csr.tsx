@@ -7,8 +7,8 @@ import { Layout } from "~/components";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Fetch with Axios" },
-    { name: "description", content: "Fetch with Axios" },
+    { title: "Fetch with Axios-CSR" },
+    { name: "description", content: "Fetch with Axios-CSR" },
   ];
 };
 
